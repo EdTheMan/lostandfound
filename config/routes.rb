@@ -1,7 +1,7 @@
 Lostandfound::Application.routes.draw do
-  get 'posts/search' => 'posts#search', :as => :post_search
-  resources:posts
-  root "posts#index"
+  get 'items/search' => 'items#search', :as => :item_search
+  resources:items
+  root "items#index"
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

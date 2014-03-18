@@ -1,0 +1,20 @@
+<br>
+<center>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search For An Item:") %>
+  <br>
+  <div class="form-group clearfix">
+  <%= label_tag( "title:") %> 
+  <%= text_field_tag(:q) %> 
+  <br></br>
+<%= label_tag( "description:") %> 
+<%= text_field_tag(:q) %> 
+<br></br>
+<%= label_tag( "type:") %> 
+<%= text_field_tag(:q) %>  
+<br></br>
+  <center> <%= submit_tag("Search") %> </center>
+<% end %>
+<br>
+<%= button_to "Go Home", items_path, :method => "get" %>
+</center>
