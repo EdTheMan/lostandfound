@@ -188,13 +188,18 @@ table {
   width: 70%;
 }
 th{
-  color: #FF0033;
+  color: #039;
+  background-color: #aabcfe;
+  font-weight: normal;
+}
+td{
+
+  background-color: #d0dafd;
 }
 td,
 th {
   text-align: center;
   padding:10px;
-  border: 1px solid black;
 
 }
 @media print {
@@ -1414,7 +1419,7 @@ pre code {
 }
 table {
   max-width: 100%;
-  background-color: #E0E0E0 ;
+  
 }
 th {
   text-align: center;

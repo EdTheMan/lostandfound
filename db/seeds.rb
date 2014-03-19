@@ -13,7 +13,7 @@ computer = Type.new(title: "Computer",description: "A computer is an electronic 
 
 Item.create(title: "Hamlet",description: "cool book" ,owner: "John" ,type: book)
 Item.create(title: "sock",description: "white" ,owner: "John" ,type: clothing)
-Item.create(title: "sasumng g s5",description: "white" ,owner: "John" ,type: cellphone)
+Item.create(title: "samsung g s5",description: "white" ,owner: "John" ,type: cellphone)
 Item.create(title: "PC",description: "blue/black" ,owner: "John" ,type: computer)
 Item.create(title: "Laptop",description: "white" ,owner: "John" ,type: computer)
 Item.create(title: "sock",description: "white" ,owner: "John" ,type: book)
