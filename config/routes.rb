@@ -1,6 +1,10 @@
 Lostandfound::Application.routes.draw do
   get 'items/search' => 'items#search', :as => :item_search
-  resources:items
+  resources:items do
+    collection do 
+      match 'search', via: [:get, :post]
+    end
+  end
   root "items#index"
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.

@@ -10,16 +10,20 @@
     <th>
     <%= f.label :description %>
     </th>   
+    <th>
+    <%= f.label :type_id %>
+    </th>   
  </tr>
 
    <tr>
+    
        <td> <%= f.text_field :title %> </td>
        <td> <%= f.text_field :description %> </td>
-       <td> <%= f.select :type, options_for_select(%w[book clothing cellphone computer]) %> </td>
+       <td> <%= f.select :type_id, @types.map { |t| [t.title, t.id]} %> </td>
   </tr>
 
  </table>
- 
+ <br>
   <p>
     <%= f.submit %>
   </p>

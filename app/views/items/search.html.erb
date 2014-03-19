@@ -1,20 +1,57 @@
 <br>
 <center>
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search For An Item:") %>
+<%= form_tag("/items/search", method: "get", action: "search") do %>
+  <%= label_tag ("Search For An Item:") %>
   <br>
   <div class="form-group clearfix">
   <%= label_tag( "title:") %> 
-  <%= text_field_tag(:q) %> 
+  <%= text_field_tag(:title) %> 
   <br></br>
 <%= label_tag( "description:") %> 
-<%= text_field_tag(:q) %> 
+<%= text_field_tag(:description) %> 
 <br></br>
 <%= label_tag( "type:") %> 
-<%= text_field_tag(:q) %>  
+<%= select_tag(:type_id, options_for_select(@types.map { |t| [t.title, t.id]})) %>
 <br></br>
-  <center> <%= submit_tag("Search") %> </center>
+<%= label_tag( "condition:") %> 
+<%= select_tag(:condition, options_for_select([['Any of these conditions (OR)',1],['All of these conditions (AND)',2]])) %> 
+<br></br>
+  <center> <%= submit_tag("Search") %>
+
+   </center>
 <% end %>
-<br>
+
+<br></br>
+
+<% @found %>
+
+<% if @found != nil  %>
+   <table>
+  <tr>
+    <th>
+    <%= label_tag "title" %>
+    </th>
+    <th>
+    <%= label_tag "description" %>
+    </th>   
+    <th>
+    <%= label_tag "type" %>
+    </th>   
+ </tr>
+	<% @found.each do |item| %>
+	 <tr>
+	<td> <%= link_to "#{item.title}",item_path(:id => item.id) %> </td>
+	<td> <%= item.description %> </td>
+	<td> <%= item.type.title %> </td>
+	<br>
+	 </tr>
+	<% end %>
+	 </table>
+
+<% end %>
+
+
+
+<br> </br>
 <%= button_to "Go Home", items_path, :method => "get" %>
 </center>

@@ -1,14 +1,26 @@
+<h1>
+</h1>
+<br>
+<br>
 <center>
 <p>
   <strong>Title:</strong>
-  <%= @post.title %>
+  <%= @item.title %>
 </p>
  
 <p>
-  <strong>Text:</strong>
-  <%= @post.text %>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+<p>
+ <strong>Type:</strong>
+  <%= @item.type.title %>
 </p>
 
-<%= button_to "Go Home", posts_path, :method => "get" %>
+<%= button_to 'Back', :back %>
+<br>
+<br>
+
+<%= button_to "Go Home", items_path, :method => "get" %>
 
 </center>
