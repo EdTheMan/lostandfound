@@ -1,11 +1,18 @@
 Lostandfound::Application.routes.draw do
   get 'items/search' => 'items#search', :as => :item_search
+  post "/items/:id/edit" => 'items#index', :as => :edit_item
+  
   resources:items do
     collection do 
       match 'search', via: [:get, :post]
     end
   end
+
+  #post "edit_item", to: 'items#index'
+
   root "items#index"
+  post "/", to: "items#index"
+
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

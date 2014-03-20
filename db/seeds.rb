@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Type.destroy_all
+Item.destroy_all
+
 book = Type.new(title: "Book",description: "A book is a collection of pages.")
 clothing = Type.new(title: "Clothing",description: "A clothing is defined as something that a human wears to keep warmth.")
 cellphone = Type.new(title: "Cell Phone",description: "A cell phone is an electronic deviced used by humans to communicate with each other from a far distance.")

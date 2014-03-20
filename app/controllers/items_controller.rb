@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
 	  @item = Item.find(params[:id])
 	 
 	  if @item.update(params[:item].permit(:title, :description, :type_id))
-	    redirect_to @item
+	    redirect_to root_path
 	  else
 	    render 'edit'
 	  end

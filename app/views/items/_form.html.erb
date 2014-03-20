@@ -17,15 +17,15 @@
 
    <tr>
     
-       <td> <%= f.text_field :title %> </td>
-       <td> <%= f.text_field :description %> </td>
-       <td> <%= f.select :type_id, @types.map { |t| [t.title, t.id]} %> </td>
+       <td> <%= f.text_field :title, class: "form-control"%> </td>
+       <td> <%= f.text_field :description, class: "form-control"%> </td>
+       <td> <%= f.select :type_id, @types.map { |t| [t.title, t.id]} , class: "form-control" %> </td>
   </tr>
 
  </table>
  <br>
   <p>
-    <%= f.submit %>
+    <%= f.submit "Create User", :class =>  "btn btn-success" %>
   </p>
 <% end %>
 </center>

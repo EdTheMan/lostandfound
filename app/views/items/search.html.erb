@@ -16,17 +16,18 @@
 <%= label_tag( "condition:") %> 
 <%= select_tag(:condition, options_for_select([['Any of these conditions (OR)',1],['All of these conditions (AND)',2]])) %> 
 <br></br>
-  <center> <%= submit_tag("Search") %>
+  <center> <%= submit_tag("Search",:class => "btn btn-info") %>
 
    </center>
 <% end %>
 
 <br></br>
 
-<% @found %>
-
+<center>
 <% if @found != nil  %>
-   <table>
+   
+   <table class ="table table-striped table-bordered table-hover" >
+    <caption class = "lead"> Search Results </caption>
   <tr>
     <th>
     <%= label_tag "title" %>
@@ -46,11 +47,11 @@
 	 </tr>
 	<% end %>
 	 </table>
-
 <% end %>
 
 
+ </center>
 
 <br> </br>
-<%= button_to "Go Home", items_path, :method => "get" %>
+<%= button_to "Go Home", items_path, :method => "get", :class => "btn btn-success" %>
 </center>
